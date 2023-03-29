@@ -11,6 +11,8 @@ class CharacterTest {
     void setUp() {
     }
 
+    // Iteración I
+
     @Test
     void characterStartsWithCorrectProps(){
         var sonGohan = new Character();
@@ -24,34 +26,34 @@ class CharacterTest {
         var victim = new Character();
         var villain = new Character();
 
-//        villain.attacks(victim, 1010L);
+        villain.attacks(victim, villain, 1010L, 950l);
 
         assertEquals(0L, victim.getHealth());
         assertEquals(false, victim.getIsAlive());
     }
 
     @Test
-    void CharacterHealthToCharacter(){
+    void characterHealthToCharacter(){
         var victim = new Character();
         var doctor = new Character();
 
-        doctor.health(victim, doctor, 940L, false);
+        doctor.health(victim, victim, 940L, true);
 
         assertEquals(940L, victim.getHealth());
-//        assertEquals(0L, victim.getHealth());
-//        assertEquals(false, victim.getIsAlive());
 
     }
 
+    // Iteración II
+
     @Test
     void selfHarm(){
+
         var victim = new Character();
         var villain = new Character();
 
-        villain.attacks(villain, villain, 950L, 1000L);
+        villain.attacks(villain, villain, 950L, 950L);
 
-        assertEquals(1000L, villain.getHealth());
-//        assertEquals(false, victim.getIsAlive());
+        assertEquals(950L, villain.getHealth());
     }
 
     @Test
@@ -61,9 +63,7 @@ class CharacterTest {
 
         doctor.health(victim, doctor, 940L, true);
 
-        assertEquals(940L, victim.getHealth());
-//        assertEquals(0L, victim.getHealth());
-//        assertEquals(false, victim.getIsAlive());
+        assertEquals(990L, victim.getHealth());
 
     }
 
