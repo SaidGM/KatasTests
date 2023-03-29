@@ -37,6 +37,7 @@ public class Character {
     }
 
     private Long damage(Character victim, Character villain, Long damage, Long health) {
+
         if (victim == villain) {
             return setHealth(health);
         }else if (damage > 1000L && villain != victim){
@@ -48,14 +49,19 @@ public class Character {
         return damage;
     }
 
-    public void health(Character victim, Long health, Boolean isAlive) {
-        victim.cure(health, isAlive);
+    public void health(Character victim, Character doctor, Long health, Boolean isAlive) {
+        victim.cure(victim, doctor, health, isAlive);
     }
 
-    private Long cure(Long health, Boolean isAlive) {
-        if (health <= 950L && isAlive == true){
+    private Long cure(Character victim, Character doctor, Long health, Boolean isAlive) {
+
+        if (victim != doctor){
+            return setHealth(health);
+        }
+        else if (health <= 950L && isAlive == true && victim == doctor) {
             return setHealth(health + 50L);
         }
+
         return setHealth(health);
     }
 }

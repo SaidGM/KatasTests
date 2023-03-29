@@ -35,7 +35,7 @@ class CharacterTest {
         var victim = new Character();
         var doctor = new Character();
 
-        doctor.health(victim, 940L, false);
+        doctor.health(victim, doctor, 940L, false);
 
         assertEquals(940L, victim.getHealth());
 //        assertEquals(0L, victim.getHealth());
@@ -44,7 +44,7 @@ class CharacterTest {
     }
 
     @Test
-    void damageToCharacterAcharacter(){
+    void selfHarm(){
         var victim = new Character();
         var villain = new Character();
 
@@ -54,5 +54,17 @@ class CharacterTest {
 //        assertEquals(false, victim.getIsAlive());
     }
 
+    @Test
+    void healThemselves(){
+        var victim = new Character();
+        var doctor = new Character();
+
+        doctor.health(victim, doctor, 940L, true);
+
+        assertEquals(940L, victim.getHealth());
+//        assertEquals(0L, victim.getHealth());
+//        assertEquals(false, victim.getIsAlive());
+
+    }
 
 }
