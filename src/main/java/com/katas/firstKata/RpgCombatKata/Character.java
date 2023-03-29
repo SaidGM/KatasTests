@@ -32,17 +32,20 @@ public class Character {
         isAlive = alive;
     }
 
-    public void attacks(Character victim, Long damage) {
-        victim.damage(damage);
+    public void attacks(Character victim, Character villain, Long damage,Long health) {
+        victim.damage(victim, villain, damage, health);
     }
 
-    private void damage(Long damage) {
-        if (damage > 1000L){
+    private Long damage(Character victim, Character villain, Long damage, Long health) {
+        if (victim == villain) {
+            return setHealth(health);
+        }else if (damage > 1000L && villain != victim){
              setHealth(0L);
              setAlive(false);
-             return;
+            return damage;
         }
         this.health -= damage;
+        return damage;
     }
 
     public void health(Character victim, Long health, Boolean isAlive) {

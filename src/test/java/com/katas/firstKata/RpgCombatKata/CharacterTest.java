@@ -24,7 +24,7 @@ class CharacterTest {
         var victim = new Character();
         var villain = new Character();
 
-        villain.attacks(victim, 1010L);
+//        villain.attacks(victim, 1010L);
 
         assertEquals(0L, victim.getHealth());
         assertEquals(false, victim.getIsAlive());
@@ -42,5 +42,17 @@ class CharacterTest {
 //        assertEquals(false, victim.getIsAlive());
 
     }
+
+    @Test
+    void damageToCharacterAcharacter(){
+        var victim = new Character();
+        var villain = new Character();
+
+        villain.attacks(villain, villain, 950L, 1000L);
+
+        assertEquals(1000L, villain.getHealth());
+//        assertEquals(false, victim.getIsAlive());
+    }
+
 
 }

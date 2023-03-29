@@ -15,7 +15,7 @@ Hay que usar TDD. Recuerda:
 
 - No puedes escribir código sin un test que falle.
 - No puedes escribir nuevos tests que no fallen.
-- Escribe siempre la solución más sencilla que haga pasar los tests. Refactoriza después.
+- Escribe siempre la solución más sencilla que haga pasar los tests. Factorize después.
 
 
 ### ⚙️ Requisitos Funcionales
@@ -49,7 +49,7 @@ Hay que usar TDD. Recuerda:
     - Por supuesto.. para números que no son múltiplos de tres y cinco, debe devolver el mismo número.
 
 - Escribe una función que reciba una lista de números y un número:
-    - La función devolverá otro array con todos los números del la lista inicial divisibles por el número que le hemos pasado por parámetro.
+    - La función devolverá otro array con todos los números de, la lista inicial divisibles por el número que le hemos pasado por parámetro.
 
 - Escribe una función que reciba un array de objetos ‘usuario’ que tenga el nombre y la edad:
     - La función debe devolver otro array con los usuarios mayores de edad
